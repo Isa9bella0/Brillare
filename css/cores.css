@@ -1,0 +1,45 @@
+:root {
+    --cor-primaria: #ca5582; /* Rosa sofisticado */
+    --cor-secundaria: #f8d7da; /* Rosa claro */
+    --cor-texto: #333;
+    --cor-fundo: #fff;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    background-color: var(--cor-primaria);
+    padding: 20px;
+    text-align: center;
+}
+
+.banner {
+    background-color: var(--cor-secundaria);
+    padding: 50px;
+    text-align: center;
+}
+
+button {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d48ba5;
+}
+
+:root {
+    --cor-primaria: #e6598fd3;    /* Rosa elegante */
+    --cor-secundaria: #f6e6eb;  /* Rosa muito claro */
+    --cor-texto: #333333;
+    --cor-fundo: #ffffff;
+    --cor-hover: #b96582;
+    --cor-destaque: #ffedf4;
+}

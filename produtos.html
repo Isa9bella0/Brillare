@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brillare - Joias</title>
+  <link rel="stylesheet" href="css/cores.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Brillare</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="produtos.html">Joias</a>
+      <a href="contato.html">Contato</a>
+      <a href="login.html">Login</a>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="carrinho.html">Carrinho 🛒 (<span id="contador">0</span>)</a>
+    </nav>
+  </header>
+
+  <section class="produtos">
+
+    <!-- Lista de Produtos -->
+    <div class="produto">
+      <img src="imagens/anel-premium.jpg" alt="Anel Premium" />
+      <p class="nome-produto">Anel Premium</p>
+      <p class="preco-produto">R$ 1.299,00</p>
+      <button class="botaoAdicionar" data-nome="Anel Premium" data-preco="1299" data-imagem="imagens/anel-premium.jpg">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+      <img src="imagens/colar-elegance.jpg" alt="Colar Elegance" />
+      <p class="nome-produto">Colar Elegance</p>
+      <p class="preco-produto">R$ 3.799,00</p>
+      <button class="botaoAdicionar" data-nome="Colar Elegance" data-preco="3799" data-imagem="imagens/colar-elegance.jpg">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+      <img src="imagens/pulseira-classica.jpg" alt="Pulseira Clássica" />
+      <p class="nome-produto">Pulseira Clássica</p>
+      <p class="preco-produto">R$ 999,00</p>
+      <button class="botaoAdicionar" data-nome="Pulseira Clássica" data-preco="999" data-imagem="imagens/pulseira-classica.jpg">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+      <img src="imagens/pulseira-gold.jpg" alt="Pulseira Gold" />
+      <p class="nome-produto">Pulseira Gold</p>
+      <p class="preco-produto">R$ 1.590,00</p>
+      <button class="botaoAdicionar" data-nome="Pulseira Gold" data-preco="1590" data-imagem="imagens/pulseira-gold.jpg">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+      <img src="imagens/pendente-luxo.jpg" alt="Pendente Luxo" />
+      <p class="nome-produto">Pendente Luxo</p>
+      <p class="preco-produto">R$ 799,00</p>
+      <button class="botaoAdicionar" data-nome="Pendente Luxo" data-preco="799" data-imagem="imagens/pendente-luxo.jpg">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+      <img src="imagens/anel-silver.jpg" alt="Anel Silver" />
+      <p class="nome-produto">Anel Silver</p>
+      <p class="preco-produto">R$ 649,00</p>
+      <button class="botaoAdicionar" data-nome="Anel Silver" data-preco="649" data-imagem="imagens/anel-silver.jpg">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+      <img src="imagens/brinco-pearl.jpg" alt="Brinco Pearl" />
+      <p class="nome-produto">Brinco Pearl</p>
+      <p class="preco-produto">R$ 899,00</p>
+      <button class="botaoAdicionar" data-nome="Brinco Pearl" data-preco="899" data-imagem="imagens/brinco-pearl.jpg">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+      <img src="imagens/bracelete-golden.jpg" alt="Bracelete Golden" />
+      <p class="nome-produto">Bracelete Golden</p>
+      <p class="preco-produto">R$ 1.999,00</p>
+      <button class="botaoAdicionar" data-nome="Bracelete Golden" data-preco="1999" data-imagem="imagens/bracelete-golden.jpg">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+      <img src="imagens/anel-aro-alternado.jpg" alt="Anel De Ouro Rose Aro Alternado" />
+      <p class="nome-produto">Anel De Ouro Rose Aro Alternado</p>
+      <p class="preco-produto">R$ 4.299,00</p>
+      <button class="botaoAdicionar" data-nome="Anel De Ouro Rose Aro Alternado" data-preco="4299" data-imagem="imagens/anel-aro-alternado.jpg">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+      <img src="imagens/anel-diamante.jpg" alt="Anel Diamante" />
+      <p class="nome-produto">Anel Diamante</p>
+      <p class="preco-produto">R$ 5.499,00</p>
+      <button class="botaoAdicionar" data-nome="Anel Diamante" data-preco="5499" data-imagem="imagens/anel-diamante.jpg">Adicionar ao Carrinho</button>
+    </div>
+
+  </section>
+
+  <script>
+    class Carrinho {
+      constructor() {
+        this.itens = JSON.parse(localStorage.getItem("carrinho")) || [];
+        this.contadorElemento = document.getElementById("contador");
+        this.atualizarContador();
+      }
+
+      adicionarItem(nome, preco, imagem) {
+        this.itens.push({ nome, preco, imagem });
+        this.atualizarContador();
+        this.salvarCarrinho();
+      }
+
+      atualizarContador() {
+        if (this.contadorElemento) {
+          this.contadorElemento.textContent = this.itens.length;
+        }
+      }
+
+      salvarCarrinho() {
+        localStorage.setItem("carrinho", JSON.stringify(this.itens));
+      }
+    }
+
+    const meuCarrinho = new Carrinho();
+
+    document.querySelectorAll(".botaoAdicionar").forEach(botao => {
+      botao.addEventListener("click", (event) => {
+        const nome = event.target.dataset.nome;
+        const preco = parseFloat(event.target.dataset.preco);
+        const imagem = event.target.dataset.imagem;
+        meuCarrinho.adicionarItem(nome, preco, imagem);
+      });
+    });
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Brillare - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
