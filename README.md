@@ -39,6 +39,9 @@ Clone ou baixe o projeto:
 bash
 git clone https://github.com/seu-repositorio-aqui.git
 Estrutura do Projeto
+
+
+
 📦 Brillare
 ├── 📄 index.html        # Página inicial
 ├── 📄 produtos.html     # Página de exibição das joias
@@ -52,6 +55,10 @@ Estrutura do Projeto
     ├── 📄 carrinho.js   # Lógica do carrinho de compras
     ├── 📄 cadastro.js   # Lógica de cadastro de usuários
     ├── 📄 login.js      # Lógica de login
+
+
+
+    
 🛠️ Tecnologias Utilizadas
 HTML5: Estrutura semântica
 
