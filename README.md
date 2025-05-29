@@ -44,16 +44,27 @@ Estrutura do Projeto
 
 📦 Brillare
 ├── 📄 index.html        # Página inicial
+
 ├── 📄 produtos.html     # Página de exibição das joias
+
 ├── 📄 carrinho.html     # Página do carrinho de compras
+
 ├── 📄 login.html        # Página de login
+
 ├── 📄 cadastro.html     # Página de cadastro
+
 ├── 📁 CSS/
+
 │   ├── 📄 styles.css   # Estilos gerais
+
 │   ├── 📄 cores.css    # Paleta de cores
+
 └── 📁 scripts/
+
     ├── 📄 carrinho.js   # Lógica do carrinho de compras
+    
     ├── 📄 cadastro.js   # Lógica de cadastro de usuários
+    
     ├── 📄 login.js      # Lógica de login
 
 
